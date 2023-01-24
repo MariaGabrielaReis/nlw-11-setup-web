@@ -30,18 +30,21 @@ export function HabitDay({
   return (
     <Popover.Root>
       <Popover.Trigger
-        className={clsx('w-10 h-10 border-2 rounded-lg', {
-          'bg-zinc-900 border-zinc-800': completedPercentage === 0,
-          'bg-teal-900 border-teal-800':
-            completedPercentage > 0 && completedPercentage < 20,
-          'bg-teal-800 border-teal-600':
-            completedPercentage >= 20 && completedPercentage < 40,
-          'bg-teal-600 border-teal-500':
-            completedPercentage >= 40 && completedPercentage < 60,
-          'bg-teal-500 border-teal-400':
-            completedPercentage >= 60 && completedPercentage < 80,
-          'bg-teal-400 border-teal-300': completedPercentage >= 80,
-        })}
+        className={clsx(
+          'w-10 h-10 border-2 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-teal-700 focus:ring-offset-2 focus:ring-offset-background',
+          {
+            'bg-zinc-900 border-zinc-800': completedPercentage === 0,
+            'bg-teal-900 border-teal-800':
+              completedPercentage > 0 && completedPercentage < 20,
+            'bg-teal-800 border-teal-600':
+              completedPercentage >= 20 && completedPercentage < 40,
+            'bg-teal-600 border-teal-500':
+              completedPercentage >= 40 && completedPercentage < 60,
+            'bg-teal-500 border-teal-400':
+              completedPercentage >= 60 && completedPercentage < 80,
+            'bg-teal-400 border-teal-300': completedPercentage >= 80,
+          }
+        )}
       />
 
       <Popover.Portal>
